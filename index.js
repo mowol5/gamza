@@ -7,7 +7,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use("./api", api)
 
-const port = 8080
+const port = 8000
 app.listen(port, () => {
   console.log(`SERVER ON PORT : ${port}`)
 })

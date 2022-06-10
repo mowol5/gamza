@@ -1,7 +1,7 @@
 // "localhost:8080/api/menu"
-const router = requier("express").Router(),
-  calorie = require("./menu.controller")
+const router = require("express").Router(),
+  menu = require("./menu.controller")
 
-router.post("./menu", menu.menu)
+router.post("/", menu.newMenu)
 
 module.exports = router

@@ -4,12 +4,15 @@ const pool = require("../../config/database")
 
 //제목 검색
 exports.getBoard = (req, res) => {
-  const param = [req.body.b_title]
   pool((conn) => {
-    conn.query("select * from tbl_board where id = ?", param, (err, row) => {
-      err && console.log(err)
-      res.send({ result: true })
-    })
+    conn.query(
+      "select * from tbl_board where b_title = ?",
+      req.body.b_title,
+      (err, row) => {
+        err && console.log(err)
+        res.send({ data: row }) //검색 결과 제공
+      }
+    )
     conn.release()
   })
 }

@@ -1,7 +1,7 @@
 // "localhost:8080/api/board"
-const router = requier("express").Router(),
-  calorie = require("./board.controller")
+const router = require("express").Router(),
+  board = require("./board.controller")
 
-router.post("./board", board.board)
+router.post("/", board.getBoard)
 
 module.exports = router
